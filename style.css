@@ -78,13 +78,8 @@ textarea::placeholder{
 
 }
 
-input:hover > input > placeholder{
 
-  position: absolute;
 
-  bottom:10px;
-
-}
 
 .wlcm{
 
@@ -122,7 +117,7 @@ input:hover > input > placeholder{
 
   color: white;
 
-  padding:3px;
+  padding:7px;
 
   background:#5D12E23B;
 
