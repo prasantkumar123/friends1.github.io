@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+
+  <!-- HTML -->
+
+  <!-- Custom Styles -->
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+
+  <script>
+
+    // Your web app's Firebase configuration
+
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+    var firebaseConfig = {
+
+    apiKey: "AIzaSyCYjsg4jJN3pzw7l48QLptgn-wounZ-FEo",
+
+    authDomain: "cartoline-india.firebaseapp.com",
+
+    projectId: "cartoline-india",
+
+    storageBucket: "cartoline-india.appspot.com",
+
+    messagingSenderId: "372576193203",
+
+    appId: "1:372576193203:web:f8849e02f4b27d39c7bec6",
+
+    measurementId: "G-0LL0L2BLEM"
+
+    };
+
+    // Initialize Firebase
+
+    firebase.initializeApp(firebaseConfig);
+
+  </script>
+
+  <h2 class="wlcm">A message for me (Prasant)</h2>
+
+    <h4 id="dvlp" align="center">Developed by Prasant</h4>
+
+  <input type="text" name="name" id="name" placeholder="enter your name">
+
+  
+
+  <br /><br />
+
+ <textarea name="msg" id="msg" rows="8" cols="40" placeholder="write your message..."></textarea>
+
+ 
+
+  <p class="btn" align="center">
+
+    <button id="add" onclick="writeUserData()" align="right">Post</button>
+
+  </p>
+
+  
+
+  <div id="msgs">
+
+    <h2 class="load">Loading...</h2>
+
+  </div>
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" charset="utf-8">
+
+    var database = firebase.database();
+
+    function writeUserData() {
+
+      var name = document.getElementById('name');
+
+      var msg = document.getElementById('msg');
+
+      if (name.valu === "" || msg.value === "") {
+
+        alert('please enter details');
+
+      } else {
+
+        firebase.database().ref('messages/').push({
+
+          userName: name.value,
+
+          msg: msg.value,
+
+        });
+
+        console.log('added');
+
+      }
+
+    }
+
+    
+
+    
+
+    var data = firebase.database().ref('messages/');
+
+data.on('value', function(snapshot) {
+
+ 
+
+             
+
+//making the msgs div blank
+
+document.getElementById("msgs").innerHTML="";
+
+ var val = snapshot.val();
+
+ Object.keys(val).forEach((key) => {
+
+ 
+
+// creating a div 
+
+const div = document.createElement("div")// this will create a div which you can append or add in the dom
+
+// now we need to fill the div with some data
+
+div.innerHTML = `
+
+<div id="main">
+
+            
+
+            <h3 id="showname">${val[key].userName.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</h3>
+
+            
+
+            <p id="para">${val[key].msg.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</p>
+
+        
+
+      
+
+        </div><br><br><br>
+
+        
+
+`;
+
+// now we can append it to dom
+
+document.getElementById("msgs").appendChild(div)
+
+ });
+
+});
+
+    
+
+    
+
+    
+
+    
+
+  </script>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
