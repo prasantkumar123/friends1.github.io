@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
+body {
+
+    background: #1ED135 url(flower.jpg) 0 0 no-repeat;
+
+    background-size: cover;
+
+    background-attachment: fixed;
+
+    transition: 1s;
+
+    margin:0;
+
+    padding: 0;
+
+    font-family: 'Merienda', cursive;
+
+}
+
+input{
+
+  border-bottom: 2px solid #EF1D99B0;
+
+  border-top: 0;
+
+  border-left:0;
+
+  border-right: 0;
+
+  outline: none;
+
+  width: 90%;
+
+  height: 30px;
+
+  margin-top: 25px;
+
+  font-size: 20px;
+
+  padding: 10px;
+
+  background: #0A0A0A82;
+
+  color: white;
+
+  border-radius:5px;
+
+  font-family: 'Merienda', cursive;
+
+}
+
+::-webkit-input-placeholder{
+
+  color: white;
+
+}
+
+textarea{
+
+  outline:none;
+
+  border-radius: 10px;
+
+  background:#18151791;
+
+  color: white;
+
+  width: 90%;
+
+  font-family: 'Merienda', cursive;
+
+}
+
+textarea::placeholder{
+
+  color: grey;
+
+}
+
+input:hover > input > placeholder{
+
+  position: absolute;
+
+  bottom:10px;
+
+}
+
+.wlcm{
+
+  color: white;
+
+  text-align: center;
+
+  font-size: 25px;
+
+}
+
+#showname{
+
+  color: white;
+
+  font-size: 25px;
+
+  background:#E212C457;
+
+  padding: 3px;
+
+  margin-bottom: 0;
+
+  margin: 10px;
+
+  border-bottom:2px solid #70E2123B;
+
+  border-radius:10px;
+
+  text-align: center;
+
+}
+
+#para{
+
+  color: white;
+
+  padding:3px;
+
+  background:#5D12E23B;
+
+  margin:3px;
+
+  border-radius:10px;
+
+}
+
+.load{
+
+  color: white;
+
+}
+
+#dvlp{
+
+  color:white;
+
+  text-align: center;
+
+}
+
+#add{
+
+  height: 50px;
+
+  width: 150px;
+
+  border-radius:5px;
+
+  background: #840EEF82;
+
+  color: white;
+
+  margin-bottom:20px;
+
+  margin-top: 1px;
+
+  font-size: 25px;
+
+  font-family: 'Merienda', cursive;
+
+}
+
+#main{
+
+  border:1px solid #33EF0EA6;
+
+  border-radius:5px;
+
+  box-shadow: 3px 5px 5px #EF0EDD4D;
+
+}
